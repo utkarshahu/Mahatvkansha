@@ -1,0 +1,211 @@
+/* ============ GLOBAL ============ */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top, #0b1220, #05070f);
+    color: #e5e7eb;
+    overflow: hidden;
+}
+
+/* ============ LAYOUT ============ */
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* ============ LEFT FORM PANEL ============ */
+.form-area {
+    width: 50%;
+    padding: 25px;
+    overflow-y: auto;
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.form-area h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg,#60a5fa,#34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ============ FORM ============ */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* INPUT FOCUS ANIMATION */
+input, textarea, select {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(17,24,39,0.8);
+    color: #e5e7eb;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.15);
+    transform: scale(1.01);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ============ BUTTON ============ */
+button {
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #6366f1, #22c55e);
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+}
+
+/* ============ FILE UPLOAD ============ */
+.upload {
+    background: rgba(17,24,39,0.8);
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px dashed rgba(148,163,184,0.4);
+    transition: 0.3s;
+}
+
+.upload:hover {
+    border-color: #60a5fa;
+    background: rgba(96,165,250,0.05);
+}
+
+/* ============ RIGHT PREVIEW PANEL ============ */
+.preview-area {
+    width: 50%;
+    padding: 25px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #0f172a, #0b1020);
+}
+
+/* ============ PREVIEW CARD ============ */
+.card {
+    background: rgba(17,24,39,0.9);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease;
+}
+
+/* IMAGE */
+.preview-img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    display: none;
+    transition: 0.3s;
+}
+
+/* HEADINGS */
+#pHeadline {
+    font-size: 30px;
+    margin: 10px 0;
+    line-height: 1.3;
+    background: linear-gradient(90deg,#fff,#94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#pSub {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* CATEGORY */
+#pCategory {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: rgba(96,165,250,0.15);
+    color: #60a5fa;
+}
+
+/* DESCRIPTION */
+#pDesc {
+    color: #cbd5e1;
+    margin-top: 10px;
+}
+
+/* CONTENT */
+#pContent {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+/* TAGS */
+#pTags {
+    margin-top: 15px;
+}
+
+#pTags span {
+    display: inline-block;
+    background: rgba(51,65,85,0.7);
+    padding: 6px 10px;
+    margin: 4px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* LOCATION */
+#pLocation {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* ============ ANIMATION ============ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============ SCROLLBAR ============ */
+.form-area::-webkit-scrollbar,
+.preview-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.form-area::-webkit-scrollbar-thumb,
+.preview-area::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}

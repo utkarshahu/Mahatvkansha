@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article Admin Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- ================= FORM ================= -->
+    <div class="form-area">
+
+        <h1>📰 Create Article</h1>
+
+        <form id="articleForm">
+
+            <label for="headline"></label><input id="headline" placeholder="Headline" required>
+            <input id="subHeadline" placeholder="Sub Headline">
+
+            <label for="shortDescription"></label><textarea id="shortDescription" placeholder="Short Description"></textarea>
+            <label for="content"></label><textarea id="content" placeholder="Content"></textarea>
+
+            <!-- CATEGORY ENUM -->
+            <label for="category"></label><select id="category">
+                <option value="">Select Category</option>
+                <option>BREAKING_NEWS</option>
+                <option>POLITICS</option>
+                <option>SPORTS</option>
+                <option>TECHNOLOGY</option>
+                <option>ENTERTAINMENT</option>
+                <option>BUSINESS</option>
+                <option>HEALTH</option>
+                <option>EDUCATION</option>
+            </select>
+
+            <!-- KEYWORD ENUM -->
+            <label for="keyword"></label><select id="keyword" multiple>
+                <option>TECHNOLOGY</option>
+                <option>BUSINESS</option>
+                <option>EDUCATION</option>
+                <option>HEALTH</option>
+                <option>SCIENCE</option>
+                <option>POLITICS</option>
+                <option>SPORTS</option>
+                <option>ENTERTAINMENT</option>
+                <option>WORLD</option>
+                <option>INDIA</option>
+            </select>
+
+            <label for="city"></label><input id="city" placeholder="City">
+            <label for="stateCountry"></label><input id="stateCountry" placeholder="State / Country">
+
+            <label for="metaTitle"></label><input id="metaTitle" placeholder="Meta Title">
+            <label for="metaDescription"></label><input id="metaDescription" placeholder="Meta Description">
+
+            <label for="slug"></label><input id="slug" placeholder="Slug">
+            <label for="videoUrl"></label><input id="videoUrl" placeholder="Video URL">
+            <label for="imageCaption"></label><input id="imageCaption" placeholder="Image Caption">
+
+            <!-- 🔥 IMAGE UPLOAD (ADDED) -->
+            <label class="upload">
+                <input type="file" id="imageFile" accept="image/*">
+                <span>📤 Upload Image</span>
+            </label>
+
+            <label for="tags"></label><input id="tags" placeholder="Tags (AI,ML,DL)">
+
+            <!-- TOGGLES -->
+            <label><input type="checkbox" id="enableComments" checked> Enable Comments</label>
+            <label><input type="checkbox" id="allowSocialSharing" checked> Social Sharing</label>
+            <label><input type="checkbox" id="showReadTime" checked> Show Read Time</label>
+
+            <button type="submit">🚀 Publish Article</button>
+
+        </form>
+    </div>
+
+    <!-- ================= PREVIEW ================= -->
+    <div class="preview-area">
+
+        <div class="card">
+
+            <img id="pImage" class="preview-img" />
+
+            <h3 id="pCategory">CATEGORY</h3>
+            <h1 id="pHeadline">Headline</h1>
+            <h4 id="pSub">Sub Headline</h4>
+
+            <p id="pDesc"></p>
+            <div id="pContent"></div>
+
+            <div id="pTags"></div>
+
+            <p id="pLocation">📍 Location</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
