@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahatvakansha - India's Aspirations, Delivered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<div class="site-wrapper">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-scroll-container">
+            <div class="top-bar-scroll-text">
+                <span>महत्वाकांक्षा समाचार पत्र — लखनऊ की अग्रणी आवाज़ ◆ सूचना एवं जनसंपर्क विभाग, उत्तर प्रदेश में पंजीकृत ◆ आरएनआई (RNI) पंजीकृत समाचार पत्र ◆ वर्ष 2017 से लखनऊ की जनता की आवाज़ बनकर उभरा है महत्वाकांक्षा ◆ अब वेब पोर्टल और मोबाइल ऐप पर भी उपलब्ध — 24×7 ताज़ी खबरें ◆ अभिषेक कुमार — संपादक एवं संस्थापक ◆ लखनऊ का सर्वश्रेष्ठ समाचार पत्र — महत्वाकांक्षा ◆ </span>
+                <span>महत्वाकांक्षा समाचार पत्र — लखनऊ की अग्रणी आवाज़ ◆ सूचना एवं जनसंपर्क विभाग, उत्तर प्रदेश में पंजीकृत ◆ आरएनआई (RNI) पंजीकृत समाचार पत्र ◆ वर्ष 2017 से लखनऊ की जनता की आवाज़ बनकर उभरा है महत्वाकांक्षा ◆ अब वेब पोर्टल और मोबाइल ऐप पर भी उपलब्ध — 24×7 ताज़ी खबरें ◆ अभिषेक कुमार — संपादक एवं संस्थापक ◆ लखनऊ का सर्वश्रेष्ठ समाचार पत्र — महत्वाकांक्षा ◆ </span>
+            </div>
+        </div>
+        <div class="right-text">
+            <i class="fa-regular fa-clock"></i>
+            <span id="real-time" class="header-time"></span>
+            <!-- ✅ ADD ARTICLE BUTTON -->
+            <button class="add-article-btn" id="openAdminBtn">
+                <i class="fa-solid fa-plus"></i> Add Article
+            </button>
+            <button id="auth-signin" class="nav-auth-btn">Sign In</button>
+            <button id="auth-logout" class="nav-auth-btn" style="display:none;">Log Out</button>
+            <button id="lang-toggle" class="lang-btn">हिंदी में पढ़ें</button>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <h1 class="logo-text">महत्वाकांक्षा</h1>
+        <p class="logo-tagline" data-en="The Voice of Truth, The Voice of the People" data-hi="सच की आवाज़, जन की आवाज़">सच की आवाज़, जन की आवाज़</p>
+    </header>
+
+    <!-- NAV -->
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="#" class="nav-item has-icon"><i class="fa-solid fa-newspaper"></i> <span>E-PAPER</span></a>
+            <a href="#" class="nav-item active has-icon"><i class="fa-solid fa-house"></i> <span>HOME</span></a>
+            <a href="#" class="nav-item">POLITICS</a>
+            <a href="#" class="nav-item">TECHNOLOGY</a>
+            <a href="#" class="nav-item">SPORTS</a>
+            <a href="#" class="nav-item">FASHION</a>
+            <a href="#" class="nav-item">FOOD</a>
+            <a href="#" class="nav-item">CONTACT</a>
+            <a href="#" class="nav-item">VIDEOS</a>
+        </div>
+        <div class="nav-right">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+        </div>
+        <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+    <!-- BREAKING NEWS TICKER -->
+    <div class="breaking-news-ticker">
+        <div class="ticker-label">BREAKING NEWS</div>
+        <div class="ticker-content">
+            <div class="ticker-scroll">
+                PM INAUGURATES NEW INFRASTRUCTURE PROJECT IN LUCKNOW... UNPRECEDENTED MONSOON RAINS HIT MUMBAI... STOCK MARKET REACHES ALL-TIME HIGH...
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT GRID -->
+    <main class="content-grid">
+
+        <!-- LEFT: Latest Articles -->
+        <aside class="left-col">
+            <h2 class="section-title">LATEST ARTICLES<br><span class="hindi-subtitle">नवीनतम लेख</span></h2>
+            <div id="article-list" class="article-list">
+                <article class="list-item">
+                    <div class="item-meta"><span class="category">Environment</span><span class="time">30 min ago</span></div>
+                    <h3 class="item-title">GREEN INITIATIVES IN HIMACHAL...</h3>
+                </article>
+                <article class="list-item">
+                    <div class="item-meta"><span class="category">Economy</span><span class="time">30 min ago</span></div>
+                    <h3 class="item-title">AGRICULTURE REFORM: IMPACT ON FARMERS</h3>
+                    <p class="item-excerpt">Agriculture reform: Impact on farmers</p>
+                </article>
+                <article class="list-item">
+                    <div class="item-meta"><span class="category">Economy</span><span class="time">30 min ago</span></div>
+                    <h3 class="item-title">STARTUP ECOSYSTEM IN TIER-2 CITIES</h3>
+                </article>
+                <article class="list-item">
+                    <div class="item-meta"><span class="category">Tech</span><span class="time">10 min ago</span></div>
+                    <h3 class="item-title">STARTUP ECOSYSTEM IN TIER-2 CITIES</h3>
+                </article>
+                <article class="list-item">
+                    <div class="item-meta"><span class="category">Government</span><span class="time">30 min ago</span></div>
+                    <h3 class="item-title">AGRICULTURE REFORM: IMPACT ON FARMERS</h3>
+                </article>
+            </div>
+        </aside>
+
+        <!-- CENTER: Featured News -->
+        <section class="center-col">
+            <h2 class="section-title text-maroon">BREAKING NEWS</h2>
+            <div id="center-articles"></div>
+        </section>
+
+        <!-- RIGHT: Trending News -->
+        <aside class="right-col">
+            <h2 class="section-title">TRENDING NEWS<br><span class="hindi-subtitle">ट्रेंडिंग खबरें</span></h2>
+            <div id="trending-list" class="card-list">
+                <article class="news-card">
+                    <img src="assets/images/cricket.png" alt="Cricket" class="card-img">
+                    <div class="card-content">
+                        <span class="category-badge maroon-bg">CRICKET</span>
+                        <h3 class="card-title">KOHLI'S UNBEATEN 100 SEALS VICTORY</h3>
+                        <p class="card-excerpt">Kohli's unbeaten 100 seals victory, for that match...</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="assets/images/gst.png" alt="GST" class="card-img">
+                    <div class="card-content">
+                        <span class="category-badge maroon-bg">ECONOMY</span>
+                        <h3 class="card-title">GST COLLECTION HITS RECORD HIGH</h3>
+                        <p class="card-excerpt">GST collection hits caption of that whole ne...</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="assets/images/politician.png" alt="US Elections" class="card-img">
+                    <div class="card-content">
+                        <span class="category-badge maroon-bg">WORLD</span>
+                        <h3 class="card-title">US ELECTIONS: KEY UPDATE</h3>
+                        <p class="card-excerpt">US elections: key caption of that whole ne...</p>
+                    </div>
+                </article>
+            </div>
+            <div class="most-viewed mt-4">
+                <h2 class="section-title">MOST VIEWED<br><span class="hindi-subtitle">सर्वाधिक देखे गए</span></h2>
+                <div class="newsletter-box">
+                    <h4>SUBSCRIBE TO NEWSLETTER</h4>
+                    <div class="newsletter-input">
+                        <input type="email" placeholder="Email...">
+                        <button><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-watermark">महत्वाकांक्षा</div>
+    <div class="footer-content-main">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#">- Mission Statement</a></li>
+                    <li><a href="#">- Our Business</a></li>
+                    <li><a href="#">- Coverage Priorities</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Editorial</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#">- Message from the Editor</a></li>
+                    <li><a href="#">- How our Journalists Work</a></li>
+                    <li><a href="#">- Corrections Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>User & Support</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#">- Actionable Feedback</a></li>
+                    <li><a href="#">- Subscription Policy</a></li>
+                    <li style="margin-top:15px;color:#ffdacc;font-size:0.85rem;"><i class="fa-solid fa-phone"></i> 9838893800</li>
+                    <li style="color:#ffdacc;font-size:0.85rem;"><i class="fa-solid fa-phone"></i> 9986446660</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#">- Privacy Policy</a></li>
+                    <li><a href="#">- Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-app-buttons">
+            <a href="#" class="app-btn play-store">
+                <i class="fa-brands fa-google-play"></i>
+                <div class="app-btn-text"><span>GET IT ON</span><strong>Google Play</strong></div>
+            </a>
+            <a href="#" class="app-btn app-store">
+                <i class="fa-brands fa-apple"></i>
+                <div class="app-btn-text"><span>Download on the</span><strong>App Store</strong></div>
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom-social">
+        <span class="social-text">FOLLOW US<br>ON THESE PLATFORMS-</span>
+        <div class="social-icons-footer">
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+    <div class="footer-copyright"><p>copyright, 2026 Mahatvakansha. All rights reserved.</p></div>
+</footer>
+
+
+<!-- ============================================================
+     ADMIN MODAL (Add Article Panel)
+============================================================ -->
+<div class="admin-overlay" id="adminOverlay">
+    <div class="admin-modal">
+
+        <!-- Admin Top Bar -->
+        <div class="admin-topbar">
+            <div class="admin-topbar-left">
+                <h1 class="admin-logo-text">महत्वाकांक्षा</h1>
+                <span class="admin-badge">ADD ARTICLE</span>
+            </div>
+            <div class="admin-topbar-right">
+                <button class="close-admin-btn" id="closeAdminBtn">
+                    <i class="fa-solid fa-xmark"></i> Close
+                </button>
+            </div>
+        </div>
+
+        <!-- Workspace: Form + Preview -->
+        <div class="admin-workspace">
+
+            <!-- LEFT: Form -->
+            <div class="editor-pane">
+                <h2><i class="fa-solid fa-pen-nib" style="color:var(--primary-color)"></i> Create Article</h2>
+
+                <form id="articleForm">
+
+                    <!-- Basic Info -->
+                    <div class="form-section">
+                        <h3><i class="fa-solid fa-heading"></i> Basic Info</h3>
+                        <div class="form-group">
+                            <label for="headline">Headline <span class="required">*</span></label>
+                            <input id="headline" type="text" placeholder="e.g. HISTORIC LUNAR LANDING: INDIA MAKES HISTORY!" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subHeadline">Sub Headline</label>
+                            <input id="subHeadline" type="text" placeholder="Supporting headline...">
+                        </div>
+                        <div class="form-group">
+                            <label for="shortDescription">Short Description <span class="hint">(2-3 line preview)</span></label>
+                            <textarea id="shortDescription" rows="3" placeholder="Brief glimpse of the article..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Full Content</label>
+                            <textarea id="content" rows="7" placeholder="Write your full article here..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Category & Keywords -->
+                    <div class="form-section">
+                        <h3><i class="fa-solid fa-tags"></i> Category & Keywords</h3>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="category">Category <span class="required">*</span></label>
+                                <select id="category">
+                                    <option value="">Select Category</option>
+                                    <option value="BREAKING_NEWS">🔴 Breaking News</option>
+                                    <option value="POLITICS">🏛️ Politics</option>
+                                    <option value="SPORTS">🏏 Sports</option>
+                                    <option value="TECHNOLOGY">💻 Technology</option>
+                                    <option value="ENTERTAINMENT">🎬 Entertainment</option>
+                                    <option value="BUSINESS">💼 Business</option>
+                                    <option value="HEALTH">🏥 Health</option>
+                                    <option value="EDUCATION">📚 Education</option>
+                                </select>
+                            </div>
+                            <div class="form-group half">
+                                <label for="tags">Tags <span class="hint">(comma separated)</span></label>
+                                <input id="tags" type="text" placeholder="AI, ML, India, Space">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="keyword">Keywords <span class="hint">(hold Ctrl/Cmd to select multiple)</span></label>
+                            <select id="keyword" multiple>
+                                <option>TECHNOLOGY</option>
+                                <option>BUSINESS</option>
+                                <option>EDUCATION</option>
+                                <option>HEALTH</option>
+                                <option>SCIENCE</option>
+                                <option>POLITICS</option>
+                                <option>SPORTS</option>
+                                <option>ENTERTAINMENT</option>
+                                <option>WORLD</option>
+                                <option>INDIA</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Media -->
+                    <div class="form-section">
+                        <h3><i class="fa-solid fa-image"></i> Media</h3>
+                        <div class="form-group">
+                            <label>Featured Image</label>
+                            <label class="upload-label">
+                                <input type="file" id="imageFile" accept="image/*">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Click to upload image
+                            </label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="imageCaption">Image Caption</label>
+                                <input id="imageCaption" type="text" placeholder="Describe the image...">
+                            </div>
+                            <div class="form-group half">
+                                <label for="videoUrl">Video URL <span class="hint">(YouTube link)</span></label>
+                                <input id="videoUrl" type="text" placeholder="https://youtube.com/...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location & SEO -->
+                    <div class="form-section">
+                        <h3><i class="fa-solid fa-location-dot"></i> Location & SEO</h3>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="city">City</label>
+                                <input id="city" type="text" placeholder="e.g. Lucknow">
+                            </div>
+                            <div class="form-group half">
+                                <label for="stateCountry">State / Country</label>
+                                <input id="stateCountry" type="text" placeholder="e.g. Uttar Pradesh">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="metaTitle">Meta Title</label>
+                                <input id="metaTitle" type="text" placeholder="SEO title (under 60 chars)">
+                            </div>
+                            <div class="form-group half">
+                                <label for="slug">URL Slug</label>
+                                <input id="slug" type="text" placeholder="india-makes-history">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="metaDescription">Meta Description</label>
+                            <textarea id="metaDescription" rows="2" placeholder="Click-worthy description under 160 chars..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Options -->
+                    <div class="form-section">
+                        <h3><i class="fa-solid fa-gear"></i> Options</h3>
+                        <div class="toggle-row">
+                            <label class="toggle-item">
+                                <input type="checkbox" id="enableComments" checked>
+                                <span>Enable Comments</span>
+                            </label>
+                            <label class="toggle-item">
+                                <input type="checkbox" id="allowSocialSharing" checked>
+                                <span>Allow Social Sharing</span>
+                            </label>
+                            <label class="toggle-item">
+                                <input type="checkbox" id="showReadTime" checked>
+                                <span>Show Read Time</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Status -->
+                    <div id="statusBanner" class="status-banner"></div>
+
+                    <!-- Actions -->
+                    <div class="admin-actions">
+                        <button type="button" class="btn-draft" id="saveDraftBtn">Save as Draft</button>
+                        <button type="submit" class="btn-publish" id="publishBtn">
+                            <i class="fa-solid fa-paper-plane"></i> Publish Article
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- RIGHT: Live Preview -->
+            <div class="preview-pane">
+                <div class="preview-header">
+                    <h3><i class="fa-solid fa-eye"></i> Live Preview</h3>
+                </div>
+                <div class="preview-scroll">
+                    <div class="preview-card">
+                        <img id="pImage" alt="Featured image">
+                        <div class="preview-card-body">
+                            <div class="p-category" id="pCategory">CATEGORY</div>
+                            <h1 class="p-headline" id="pHeadline">Your headline will appear here...</h1>
+                            <h4 class="p-sub" id="pSub"></h4>
+                            <p class="p-location" id="pLocation"><i class="fa-solid fa-location-dot"></i> Location</p>
+                            <p class="p-desc" id="pDesc">Short description preview...</p>
+                            <div class="p-content" id="pContent"></div>
+                            <div class="p-tags" id="pTags"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src = "js/script.js"></script>
+
+</body>
+</html>
