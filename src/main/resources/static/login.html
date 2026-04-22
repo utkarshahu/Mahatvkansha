@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<div class="p-7 h-screen flex items-center justify-center">
+
+    <!-- LEFT SIDE (BRANDING) -->
+    <div class="w-[40%] h-[98%] bg-white flex flex-col justify-between">
+
+        <div class="px-16 py-8">
+            <h1 class="text-4xl font-bold text-red-800 mb-2">महत्वाकांक्षा</h1>
+            <p class="text-red-700 text-lg">सच की आवाज़, जन की आवाज़</p>
+        </div>
+
+        <img 
+            src="https://i.pinimg.com/736x/2e/94/8e/2e948e58a56b811b7d56128e74fe6b83.jpg"
+            class="w-full h-[31rem] object-contain"
+        >
+    </div>
+
+    <!-- RIGHT SIDE (LOGIN FORM) -->
+    <div class="flex px-8 py-8 justify-center w-[40%] h-[98%] bg-[#f5f5f5]">
+
+        <form id="loginForm" class="w-full">
+
+            <h2 class="text-3xl font-bold mb-6 text-center">Login</h2>
+
+            <h3 class="text-lg font-medium mb-2">Email</h3>
+            <input 
+                type="email" 
+                id="email"
+                class="bg-[#eee] mb-4 rounded px-3 py-2 border w-full text-lg"
+                placeholder="Enter your email"
+                required
+            >
+
+            <h3 class="text-lg font-medium mb-2">Password</h3>
+            <input 
+                type="password" 
+                id="password"
+                class="bg-[#eee] mb-4 rounded px-3 py-2 border w-full text-lg"
+                placeholder="Enter your password"
+                required
+            >
+            <div class="flex items-center justify-center ">
+                
+            <h3 class="text-md">If you don't have an account</h3>
+            <button 
+                    type="button" 
+                    onclick="openUserForm()" 
+                    class="px-4 py-2  text-blue-700 font-bold  hover:text-blue-900 "
+                >
+                    Create Account
+            </button>
+            </div>
+
+            <!-- STATUS -->
+            <p id="status" class="text-center mb-3 font-semibold"></p>
+
+            <!-- BUTTONS -->
+            <div class="flex justify-between">
+                <button 
+                    type="submit" 
+                    class="px-4 py-2 w-36 font-bold bg-black text-white rounded hover:bg-gray-800"
+                >
+                    Login
+                </button>
+            </div>
+            
+
+        </form>
+    </div>
+
+</div>
+
+<script src="js/login.js"></script>
+
+<script>
+
+</script>
+
+</body>
+</html>

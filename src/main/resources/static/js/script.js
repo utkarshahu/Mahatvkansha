@@ -1,6 +1,9 @@
 // ============================================================
 //  MAIN SITE SCRIPTS
 // ============================================================
+
+
+console.log ("Script loaded successfully!");
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Language Toggle
@@ -45,20 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         updateTime();
         setInterval(updateTime, 1000);
-    }
-
-    // 5. Auth toggle
-    const btnSignIn = document.getElementById('auth-signin');
-    const btnLogOut = document.getElementById('auth-logout');
-    if (btnSignIn && btnLogOut) {
-        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-        const updateAuthUI = (loggedIn) => {
-            btnSignIn.style.display = loggedIn ? 'none' : 'inline-block';
-            btnLogOut.style.display = loggedIn ? 'inline-block' : 'none';
-        };
-        updateAuthUI(isLoggedIn);
-        btnSignIn.addEventListener('click', () => { localStorage.setItem('isLoggedIn', 'true'); updateAuthUI(true); });
-        btnLogOut.addEventListener('click', () => { localStorage.setItem('isLoggedIn', 'false'); updateAuthUI(false); });
     }
 
     // ============================================================
@@ -343,6 +332,44 @@ function displayCenterArticles(articles) {
 }
 
 
+// ============================================================
+//  GLOBAL LOGOUT (FIXED)
+// ============================================================
+async function logout(){
+    console.log("Logout clicked");
+
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
+
+    if(!token){
+        console.log("No token → redirecting");
+        window.location.href = "login.html";
+        return;
+    }
+
+    try{
+        const res = await fetch("http://localhost:8080/logout", {
+            method: "POST",
+            headers: {
+                "Authorization": token
+            }
+        });
+
+        console.log("Response status:", res.status);
+
+    } catch(err){
+        console.error("Logout API error:", err);
+    }
+
+    // ALWAYS clear frontend
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+
+    console.log("User logged out");
+
+    window.location.href = "login.html";
+}
+
 
 function displaySidebarArticles(articles) {
 
@@ -373,6 +400,21 @@ function displaySidebarArticles(articles) {
 
         container.appendChild(item);
     });
+
+
+}
+
+
+
+
+
+// ============================================================
+//  OPEN USER FORM
+// ============================================================
+
+function openLoginForm(){
+    console.log("Opening login form...");
+    window.location.href = "login.html";
 }
 
 

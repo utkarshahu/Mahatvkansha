@@ -91,6 +91,19 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.user-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 .lang-btn:hover { background-color: var(--primary-dark); }
 
 /* ADD ARTICLE BUTTON */
@@ -112,20 +125,6 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 }
 .add-article-btn:hover { background-color: #145f2e; transform: scale(1.03); }
 
-.nav-auth-btn {
-    background: transparent;
-    border: 1px solid var(--text-muted);
-    color: var(--text-main);
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s;
-    font-family: var(--font-body);
-}
-.nav-auth-btn:hover { background: var(--text-muted); color: var(--white); }
 
 .header-time { font-family: monospace; font-weight: 600; font-size: 1.05rem; color: var(--text-main); }
 
@@ -191,7 +190,13 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 }
 .nav-item.active, .nav-item:hover { color: var(--white); background-color: rgba(255,255,255,0.1); }
 .nav-item i { margin-right: 8px; }
+nav-auth-btn{
+color: red;background-color: var(--primary-color);
+border: none;padding: 6px 16px;
 
+border-radius: 4px;font-size: 0.85rem;font-family: var(--font-body);
+font-weight: 600;cursor: pointer;transition: background-color 0.3s;
+}
 .nav-right { display: flex; align-items: center; gap: 20px; }
 
 .search-box {
