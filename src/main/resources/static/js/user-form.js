@@ -1,60 +1,74 @@
-document.getElementById("userForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
 
-    
+    const userForm = document.getElementById("userForm");
 
-    const user = {
-        username: document.getElementById("username").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
-        role: document.getElementById("role").value,
-        bio: document.getElementById("bio").value,
-        releaseDate: document.getElementById("releaseDate").value
-    };
+    userForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    const imageFile = document.getElementById("imageFile").files[0];
+        const user = {
+            username: document.getElementById("username").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            password: document.getElementById("password").value,
+            role: document.getElementById("role").value,
+            bio: document.getElementById("bio").value.trim(),
+            releaseDate: document.getElementById("releaseDate").value
+        };
 
-    const formData = new FormData();
+        const imageFile = document.getElementById("imageFile").files[0];
 
-    formData.append(
-        "user",
-        new Blob([JSON.stringify(user)], { type: "application/json" })
-    );
+        const formData = new FormData();
 
-    if (imageFile) {
-        formData.append("imageFile", imageFile);
-    }
+        formData.append(
+            "user",
+            new Blob(
+                [JSON.stringify(user)],
+                { type: "application/json" }
+            )
+        );
 
-    try {
-        const res = await fetch("http://localhost:8080/user/create", {
-            method: "POST",
-            body: formData
-        });
-
-        console.log("Status code:", res.status);
-
-        if (!res.ok) {
-            throw new Error("Server error");
+        if (imageFile) {
+            formData.append("imageFile", imageFile);
         }
 
-        const data = await res.json();
-        console.log("Response:", data);
+        try {
 
-        
-        alert("User created successfully!");
+            const res = await fetch("/user/create", {
+                method: "POST",
+                body: formData
+            });
 
-        document.getElementById("userForm").reset();
+            console.log("Status Code:", res.status);
 
-    } catch (err) {
-        console.error(err);
+            if (!res.ok) {
+                const errorText = await res.text();
+                console.error("Server Error:", errorText);
+                throw new Error(errorText || "User creation failed");
+            }
 
-        
+            const data = await res.json();
 
-        alert("Error creating user. Try again.");
-    }
+            console.log("Response:", data);
+
+            alert("User created successfully!");
+
+            userForm.reset();
+
+            // Redirect after successful registration
+            window.location.href = "index.html";
+
+        } catch (err) {
+
+            console.error("Error:", err);
+
+            alert(
+                "Error creating user.\n\n" +
+                (err.message || "Please try again.")
+            );
+        }
+    });
+
 });
 
-function cancelForm(){
+function cancelForm() {
     document.getElementById("userForm").reset();
-    
 }

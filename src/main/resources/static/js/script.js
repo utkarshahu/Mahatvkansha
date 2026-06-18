@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (file) formData.append('image', file);
 
         try {
-            const res = await fetch('http://localhost:8080/article/create', {
+            const res = await fetch('article/create', {
                 method: 'POST',
                 body: formData
             });
@@ -222,7 +222,7 @@ function getTimeAgo() {
 }
 
 function fetchArticles() {
-    fetch('http://localhost:8080/article/all')
+    fetch('/article/all')
         .then(res => res.json())
         .then(articles => {
             console.log(articles);
@@ -348,7 +348,7 @@ async function logout(){
     }
 
     try{
-        const res = await fetch("http://localhost:8080/logout", {
+        const res = await fetch("/logout", {
             method: "POST",
             headers: {
                 "Authorization": token
